@@ -40,6 +40,7 @@ class QQMsgProcessor:
         if isinstance(mime, bytes):
             mime = mime.decode()
         efb_msg.filename = data['file'] if 'file' in data else efb_msg.file.name
+        efb_msg.filename += mime.split('/')[1]
         efb_msg.path = efb_msg.file.name
         efb_msg.mime = mime
         if "gif" in mime:
