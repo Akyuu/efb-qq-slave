@@ -115,7 +115,7 @@ class QQMsgProcessor:
         # todo this function's maybe not necessary?
         pass
     
-    def qq_replay_wrapper(self, data, chat: Chat = None):
+    def qq_reply_wrapper(self, data, chat: Chat = None):
         return []
     
     def qq_forward_wrapper(self, data, chat: Chat = None):
