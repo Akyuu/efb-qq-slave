@@ -91,7 +91,8 @@ class ChatManager:
             return chat.get_member(str(member_uid))
         chat_name = ''
         if 'nickname' not in context:
-            i: dict = self.channel.QQClient.get_stranger_info(member_uid)
+            # i: dict = self.channel.QQClient.get_stranger_info(member_uid)
+            i: dict = self.channel.QQClient.get_group_member_info(context['group_id'], member_uid)
             chat_name = ""
             if i:
                 chat_name = i['nickname']
