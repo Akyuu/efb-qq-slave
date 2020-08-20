@@ -114,6 +114,16 @@ class QQMsgProcessor:
     def qq_small_face_wrapper(self, data, chat: Chat = None):
         # todo this function's maybe not necessary?
         pass
+    
+    def qq_replay_wrapper(self, data, chat: Chat = None):
+        return []
+    
+    def qq_forward_wrapper(self, data, chat: Chat = None):
+        efb_msg = Message(
+            type=MsgType.Unsupported,
+            text=self._('[Here comes the Forward Messages, please check it on your phone]')
+        )
+        return [efb_msg]
 
     def qq_sign_wrapper(self, data, chat: Chat = None):
         location = self._('at {}').format(data['location']) if 'location' in data else self._('at Unknown Place')
