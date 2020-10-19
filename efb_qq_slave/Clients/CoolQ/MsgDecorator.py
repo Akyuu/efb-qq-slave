@@ -30,7 +30,7 @@ class QQMsgProcessor:
             return [efb_msg]
 
         # efb_msg.file = cq_get_image(data['url'])
-        efb_msg.file = cq_get_image(data['url']) if data['url']
+        efb_msg.file = cq_get_image(data['url']) if data['url'] else None
         if efb_msg.file is None:
             efb_msg.type = MsgType.Text
             efb_msg.text = self._('[Download image failed, please check on your QQ client]')
