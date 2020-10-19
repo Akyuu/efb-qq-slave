@@ -117,12 +117,23 @@ class QQMsgProcessor:
         pass
     
     def qq_reply_wrapper(self, data, chat: Chat = None):
-        return []
+        efb_msg = Message(
+            type=MsgType.Unsupported,
+            text=self._('[Reply Messages]')
+        )
+        return [efb_msg]
     
     def qq_forward_wrapper(self, data, chat: Chat = None):
         efb_msg = Message(
             type=MsgType.Unsupported,
-            text=self._('[Here comes the Forward Messages, please check it on your phone]')
+            text=self._('[Forward Messages]')
+        )
+        return [efb_msg]
+    
+    def qq_video_wrapper(self, data, chat: Chat = None):
+        efb_msg = Message(
+            type=MsgType.Unsupported,
+            text=self._('[Video Message]')
         )
         return [efb_msg]
 
